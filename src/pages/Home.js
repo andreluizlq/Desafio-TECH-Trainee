@@ -1,12 +1,32 @@
-import React from 'react'
+import { render } from '@testing-library/react'
+import React, { useEffect } from 'react'
 import './Home.css'
 
-const PagesHome = () => {
 
-    const [active, setActive] = React.useState(true)
+const PagesHome = () => {
       
+    const [longitude, setlongitude] = React.useState(0);
+    const [latitude, setlatitude] = React.useState(0);
+
+
+    async function carregar(){
+        if("geolocation" in navigator){
+            navigator.geolocation.getCurrentPosition(function(position){
+              setlatitude (position.coords.latitude)
+              setlongitude (position.coords.longitude)
+            })
+        }
+        else{
+            alert("Não foi possivel acessar sua localização, por favor verificar as permissões do navegador")
+        }
+
+        const resposta = await fetch(`https://api.sunrise-sunset.org/json?lat=${36.7201600}&lng=${-4.4203400}&callback=mycallback`)
+        console.log(resposta)
+    }
+
     function handleClick(event) {
         event.currentTarget.classList.toggle("active")
+        event.currentTarget.classList.remove("acender")
     }
 
     function buttomClick(){
@@ -15,13 +35,17 @@ const PagesHome = () => {
             if (janela.classList.contains("active")){
                 janela.classList.remove("active")
             }
-            else{
-                janela.classList.add("active")
-            }
+            
+            janela.classList.toggle("acender")
+            
+
         });
-        console.log(janelas)
     }
     
+    useEffect(() => {
+        carregar()
+    }, []);
+
     return(
         <>
             <section>

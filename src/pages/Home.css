@@ -59,9 +59,10 @@ buttom:hover{
     margin: 22px;
     background-color: #ffffff;
     border-radius: 2px;
+    cursor: pointer;
 }
 
-.janela.active{
+.janela.active, .janela.acender{
     background-color: #FFFF00;
 }
 
