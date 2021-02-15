@@ -21,7 +21,7 @@ const PagesHome = () => {
         }
 
         const resposta = await fetch(`https://api.sunrise-sunset.org/json?lat=${36.7201600}&lng=${-4.4203400}&callback=mycallback`)
-        console.log(resposta)
+        /* não obtive retorno valido da api */
     }
 
     function handleClick(event) {
@@ -34,17 +34,10 @@ const PagesHome = () => {
         janelas.forEach(janela => {
             if (janela.classList.contains("active")){
                 janela.classList.remove("active")
-            }
-            
+            }      
             janela.classList.toggle("acender")
-            
-
         });
     }
-    
-    useEffect(() => {
-        carregar()
-    }, []);
 
     return(
         <>
