@@ -1,0 +1,76 @@
+buttom{
+    background-color: #0066ff;
+    color: #ffffff;
+    padding: 20px;
+    width: 60px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 40px;
+    border: solid 1px #0066ff;
+    transition: 0.2s;
+    
+}
+
+buttom:hover{
+    background-color: #ffffff;
+    color: #0066ff;
+    border: solid 1px #0066ff
+}
+
+.predio_bloco{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.topo {
+    background-color: #0066ff;
+    width: 408px;
+    height: 130px;
+    transform: skewX(-45deg);
+    margin: 120px 0 10px 80px;
+    border-radius: 4px;
+}
+  
+.andares {
+    list-style-type: none;
+    margin: 20px;
+}
+
+.frente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0066ff;
+    width: 400px;
+    height: 120px;
+    transform: translate(-54px);
+    -webkit-transform: translate(-54px);
+    margin: -16px 0 0 14px;
+    border-radius: 4px;
+}
+
+.janela{
+    height: 30px;
+    width: 30px;
+    margin: 22px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+.janela.active{
+    background-color: #FFFF00;
+}
+
+.lado {
+    background-color: #0084ff;
+    width: 80px;
+    height: 90px;
+    border-radius: 4px;
+
+    transform: translate(52px) rotate(90deg) scale(1.5) skewX(45deg) translate(-27px);
+    -webkit-transform: translate(400px) rotate(90deg) scale(1.5) skewX(45deg) translate(-116px);
+}
